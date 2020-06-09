@@ -111,13 +111,12 @@ async def goat(ctx, *args):
         try:
             await client.wait_for('reaction_add', timeout=30.0, check=check)
             await lookup(selected)
-            await msg.delete()
+            # await msg.delete()
         except asyncio.TimeoutError:
             await ctx.send('Took too long to select an option. Please try again.')
-            await msg.delete()
     elif len(results) == 0:
-        await ctx.send('Keywords were too specific. No products found. Please try again.')
+        await ctx.send('No products found. Please try again.')
     elif len(results) > 10:
-        await ctx.send('Keywords were too broad. Too many products found. Please try again.')
+        await ctx.send('Too many products found. Please try again.')
 
 client.run(token)
