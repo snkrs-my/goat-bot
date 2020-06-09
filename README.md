@@ -12,11 +12,11 @@ Takes in keywords from the user and displays a list of 10 possible products
 - User error handling
 
 It returns an embed with:
-- Product name w/ hyperlink
+- Product name w/ GOAT hyperlink
 - Thumbnail Picture
 - SKU
 - Release Date (yyyy-mm-dd)
-- Size | Lowest Ask | Highest Bid
+- Table of lowest Ask and highest Bid for every size
 
 # Bot Commands
 - .goat <keywords here>
