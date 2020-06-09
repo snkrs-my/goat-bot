@@ -8,24 +8,21 @@ The goal was to create something that people in the sneaker community would be a
 Takes in keywords from the user and displays a list of 10 possible products
 - User can choose the desired product by reacting to the bot's message
   - If only 1 result is found, the user does not have to select an option
-- Selection message automatically deletes
-- User error handling
 
 It returns an embed with:
 - Product name w/ GOAT hyperlink
 - Thumbnail Picture
 - SKU
 - Release Date (yyyy-mm-dd)
-- Table of lowest Ask and highest Bid for every size
+- Table of lowest ask and highest bid for every size
 
 # Bot Commands
-- .goat <keywords here>
+- .goat [keywords here]
 
 # Screenshots
-![Errors](https://github.com/kxvxnc/images/blob/master/goaterror.PNG)
+![Errors](https://github.com/kxvxnc/images/blob/master/goaterrors.PNG)
 ![Multiple Selection](https://github.com/kxvxnc/images/blob/master/goatmulti.PNG)
 ![Single Selection](https://github.com/kxvxnc/images/blob/master/goatsingle.PNG)
-![Timeout](https://github.com/kxvxnc/images/blob/master/goattimeout.PNG)
 
 # Installation
 - Install python 3+ and add python to your PATH

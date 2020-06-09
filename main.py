@@ -124,6 +124,8 @@ async def goat(ctx, *args):
         try:
             await client.wait_for('reaction_add', timeout=30.0, check=check)
             await lookup(selected, keywords, ctx)
+            # This automatically deletes the selection message
+            # await msg.delete()
         except asyncio.TimeoutError:
             await ctx.send('Took too long to select an option. Please try again.')
     elif numResults == 0:
