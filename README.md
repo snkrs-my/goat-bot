@@ -30,9 +30,9 @@ It returns an embed with:
 # Installation
 - Install python 3+ and add python to your PATH
 - Install pip `python get-pip.py`
-- Install dependencies `pip install -r requirements.txt`
 - Clone this repository `git clone https://github.com/kxvxnc/GOAT-Discord-Bot.git`
 - Change directories to the current folder `cd /to/your/directory/GOAT-Discord-Bot`
+- Install dependencies `pip install -r requirements.txt`
 - Create an application at the [Discord Developer Portal](https://discord.com/developers/applications)
 - Edit line 8 in main.py with your own bot token and save
 - Run main.py `python main.py`
