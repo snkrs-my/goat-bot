@@ -5,7 +5,7 @@ import json
 from tabulate import tabulate
 import asyncio
 
-token = 'YOUR TOKEN HERE'
+token = 'YOUR BOT TOKEN'
 client = commands.Bot(command_prefix = '.')
 selected = 0
 numResults = 0
@@ -36,8 +36,10 @@ async def lookup(selection, keywords, ctx):
     results = r.json()["hits"][selection]
     generalAPI = f"https://www.goat.com/api/v1/product_templates/{results['slug']}/show_v2"
     offerAPI = f"https://www.goat.com/api/v1/highest_offers?productTemplateId={results['id']}"
+    askAPI = f"https://www.goat.com/api/v1/product_variants?productTemplateId={results['slug']}"
     general = requests.get(generalAPI, headers=header).json()
     bids = requests.get(offerAPI, headers=header).json()
+    asks = requests.get(askAPI, headers=header).json()
     link = f"https://goat.com/sneakers/{results['slug']}"
 
     priceDict = {}
@@ -49,6 +51,9 @@ async def lookup(selection, keywords, ctx):
     for bid in bids:
         if bid["size"] in priceDict:
             priceDict[bid["size"]]["bid"] = str(bid["offerAmountCents"]["amountUsdCents"])[:-2]
+    for ask in asks:
+        if ask["boxCondition"] == "good_condition":
+            priceDict[ask["size"]]["ask"] = str(ask["lowestPriceCents"]["amountUsdCents"])[:-2]
 
     if general["productCategory"] == "clothing":
         priceDict2 = {}
