@@ -5,7 +5,7 @@ import json
 from tabulate import tabulate
 import asyncio
 
-token = 'YOUR BOT TOKEN'
+token = 'Tl4YyDk5OYomgnLVDrM2HoJ8D3AY5e2f'
 client = commands.Bot(command_prefix = '.')
 selected = 0
 numResults = 0
